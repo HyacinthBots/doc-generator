@@ -79,7 +79,7 @@ jobs:
           fetch-depth: 0
 
       - name: Publish with Gradle
-        uses: gradle/gradle-build-action@v2
+        uses: gradle/gradle-build-action@v3
         with:
           arguments: publish -x test
           gradle-home-cache-cleanup: true
