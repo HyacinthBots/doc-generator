@@ -8,7 +8,7 @@ bin-compat = "0.14.0"
 detekt = "1.23.5"
 logging = "6.0.3"
 
-junit5 = "5.10.1"
+junit5 = "5.10.2"
 
 [libraries]
 kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk8" }
