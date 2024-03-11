@@ -1,5 +1,5 @@
 [versions]
-kotlin = "1.9.22"
+kotlin = "1.9.23"
 kordex = "1.7.2-20240221.102953-1"
 git-hooks = "0.0.2"
 licenser = "0.6.1"
