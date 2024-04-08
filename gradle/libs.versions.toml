@@ -6,7 +6,7 @@ licenser = "0.6.1"
 bin-compat = "0.14.0"
 
 detekt = "1.23.5"
-logging = "6.0.3"
+logging = "6.0.4"
 
 junit5 = "5.10.2"
 
