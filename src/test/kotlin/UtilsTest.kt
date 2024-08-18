@@ -7,10 +7,10 @@
  * please see the LICENSE file or https://mit-license.org/
  */
 
-import com.kotlindiscord.kord.extensions.i18n.ResourceBundleTranslations
-import com.kotlindiscord.kord.extensions.i18n.SupportedLocales
 import dev.kord.common.entity.Permission
 import dev.kord.common.entity.Permissions
+import dev.kordex.core.i18n.ResourceBundleTranslations
+import dev.kordex.core.i18n.SupportedLocales
 import kotlinx.coroutines.runBlocking
 import org.hyacinthbots.docgenerator.enums.CommandTypes
 import org.hyacinthbots.docgenerator.findOrCreateDocumentsFile

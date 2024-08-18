@@ -1,6 +1,6 @@
 [versions]
 kotlin = "2.0.20-Beta1"
-kordex = "1.9.0-20240701.141421-2"
+kordex = "2.0.0-20240818.103627-5"
 git-hooks = "0.0.2"
 licenser = "0.6.1"
 bin-compat = "0.15.0-Beta.3"
@@ -13,7 +13,7 @@ junit5 = "5.10.3"
 [libraries]
 kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk8" }
 detekt = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
-kordex = { module = "com.kotlindiscord.kord.extensions:kord-extensions", version.ref = "kordex" }
+kordex = { module = "dev.kordex:kord-extensions", version.ref = "kordex" }
 logging = { module = "io.github.oshai:kotlin-logging", version.ref = "logging" }
 junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit5" }
 junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit5" }

@@ -9,15 +9,15 @@
 
 package org.hyacinthbots.docgenerator.extensions
 
-import com.kotlindiscord.kord.extensions.commands.application.ApplicationCommand
-import com.kotlindiscord.kord.extensions.extensions.Extension
-import com.kotlindiscord.kord.extensions.extensions.publicSlashCommand
-import com.kotlindiscord.kord.extensions.i18n.TranslationsProvider
-import com.kotlindiscord.kord.extensions.pagination.PublicResponsePaginator
-import com.kotlindiscord.kord.extensions.pagination.pages.Page
-import com.kotlindiscord.kord.extensions.pagination.pages.Pages
 import dev.kord.common.entity.Permission
 import dev.kord.rest.builder.message.EmbedBuilder
+import dev.kordex.core.commands.application.ApplicationCommand
+import dev.kordex.core.extensions.Extension
+import dev.kordex.core.extensions.publicSlashCommand
+import dev.kordex.core.i18n.TranslationsProvider
+import dev.kordex.core.pagination.PublicResponsePaginator
+import dev.kordex.core.pagination.pages.Page
+import dev.kordex.core.pagination.pages.Pages
 import org.hyacinthbots.docgenerator.addArguments
 import org.hyacinthbots.docgenerator.additionalDocumentation
 import org.hyacinthbots.docgenerator.builder.DocAdditionBuilder
@@ -57,7 +57,7 @@ public class CommandList(private val botName: String?, private val enabledComman
 						val provider = slashCommand.translationsProvider
 						val bundle = slashCommand.extension.bundle
 						arguments = addArguments(slashCommand, provider, bundle, null)
-						if (arguments?.isEmpty() == true) arguments = null
+						if (arguments.isEmpty() == true) arguments = null
 						var extraDocs = slashCommand.additionalDocumentation[slashCommand.name]
 						pagesObj.addPage(
 							Page {

@@ -9,12 +9,12 @@
 
 package org.hyacinthbots.docgenerator.generator
 
-import com.kotlindiscord.kord.extensions.commands.application.message.MessageCommand
-import com.kotlindiscord.kord.extensions.commands.application.slash.SlashCommand
-import com.kotlindiscord.kord.extensions.commands.application.user.UserCommand
-import com.kotlindiscord.kord.extensions.extensions.Extension
-import com.kotlindiscord.kord.extensions.i18n.ResourceBundleTranslations
-import com.kotlindiscord.kord.extensions.i18n.SupportedLocales
+import dev.kordex.core.commands.application.message.MessageCommand
+import dev.kordex.core.commands.application.slash.SlashCommand
+import dev.kordex.core.commands.application.user.UserCommand
+import dev.kordex.core.extensions.Extension
+import dev.kordex.core.i18n.ResourceBundleTranslations
+import dev.kordex.core.i18n.SupportedLocales
 import io.github.oshai.kotlinlogging.KotlinLogging
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

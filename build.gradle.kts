@@ -42,7 +42,8 @@ plugins {
 
 group = "org.hyacinthbots"
 version = Meta.PROJECT_VERSION
-val javaVersion = 21
+
+val javaVersion = 13  // KordEx minimum pinned Java version
 
 repositories {
     mavenCentral()
@@ -55,6 +56,11 @@ repositories {
     maven {
         name = "Sonatype Snapshots"
         url = uri("https://s01.oss.sonatype.org/content/repositories/snapshots")
+    }
+
+    maven {
+        name = "Kord Extensions (Snapshots)"
+        url = uri("https://snapshots-repo.kordex.dev")
     }
 }
 
@@ -106,6 +112,9 @@ tasks {
         options.encoding = "UTF-8"
         options.isDeprecation = true
         options.release.set(javaVersion)
+
+	    sourceCompatibility = javaVersion.toString()
+	    targetCompatibility = javaVersion.toString()
     }
 
     wrapper {

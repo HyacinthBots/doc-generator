@@ -9,20 +9,20 @@
 
 package org.hyacinthbots.docgenerator.generator
 
-import com.kotlindiscord.kord.extensions.i18n.ResourceBundleTranslations
-import com.kotlindiscord.kord.extensions.i18n.SupportedLocales
-import com.kotlindiscord.kord.extensions.i18n.TranslationsProvider
-import com.kotlindiscord.kord.extensions.koin.KordExKoinComponent
+import dev.kordex.core.i18n.ResourceBundleTranslations
+import dev.kordex.core.i18n.SupportedLocales
+import dev.kordex.core.i18n.TranslationsProvider
+import dev.kordex.core.koin.KordExKoinComponent
 import org.hyacinthbots.docgenerator.DEFAULT_BUNDLE_NAME
 import org.hyacinthbots.docgenerator.exceptions.InvalidConverterException
 import org.hyacinthbots.docgenerator.translate
 import java.util.Locale
 
 /** The file path to converters. */
-private const val STANDARD_PREFIX: String = "com.kotlindiscord.kord.extensions.commands.converters"
+private const val STANDARD_PREFIX: String = "dev.kordex.core.commands.converters"
 
 /** The file path to converters specifically for slash commands. */
-private const val APPLICATION_PREFIX: String = "com.kotlindiscord.kord.extensions.commands.application.slash.converters"
+private const val APPLICATION_PREFIX: String = "dev.kordex.core.commands.application.slash.converters"
 
 /**
  * A class to facilitate the formatting of a converter from an unreadable file path to a readable, translatable string.

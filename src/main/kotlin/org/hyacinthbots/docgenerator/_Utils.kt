@@ -9,13 +9,13 @@
 
 package org.hyacinthbots.docgenerator
 
-import com.kotlindiscord.kord.extensions.commands.Argument
-import com.kotlindiscord.kord.extensions.commands.application.slash.SlashCommand
-import com.kotlindiscord.kord.extensions.i18n.SupportedLocales
-import com.kotlindiscord.kord.extensions.i18n.TranslationsProvider
-import com.kotlindiscord.kord.extensions.utils.translate
 import dev.kord.common.entity.Permission
 import dev.kord.common.entity.Permissions
+import dev.kordex.core.commands.Argument
+import dev.kordex.core.commands.application.slash.SlashCommand
+import dev.kordex.core.i18n.SupportedLocales
+import dev.kordex.core.i18n.TranslationsProvider
+import dev.kordex.core.utils.translate
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.hyacinthbots.docgenerator.generator.ConverterFormatter

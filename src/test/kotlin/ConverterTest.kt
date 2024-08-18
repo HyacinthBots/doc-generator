@@ -7,7 +7,7 @@
  * please see the LICENSE file or https://mit-license.org/
  */
 
-import com.kotlindiscord.kord.extensions.ExtensibleBot
+import dev.kordex.core.ExtensibleBot
 import kotlinx.coroutines.runBlocking
 import org.hyacinthbots.docgenerator.exceptions.InvalidConverterException
 import org.hyacinthbots.docgenerator.generator.ConverterFormatter
@@ -37,24 +37,24 @@ class ConverterTest {
 		var converter3: String? = null
 		assertThrows<InvalidConverterException> {
 			ConverterFormatter(
-				"com.kotlindiscord.kord.extensions.commands.converters.impl.NotRealConverter",
+				"dev.kordex.core.commands.converters.impl.NotRealConverter",
 				"fake"
 			).formatConverter()
 		}
 
 		assertDoesNotThrow {
 			converter1 = ConverterFormatter(
-				"com.kotlindiscord.kord.extensions.commands.converters.impl.ChannelConverter",
+				"dev.kordex.core.commands.converters.impl.ChannelConverter",
 				"channel"
 			).formatConverter()
 
 			converter2 = ConverterFormatter(
-				"com.kotlindiscord.kord.extensions.commands.application.slash.converters.impl.StringChoiceConverter",
+				"dev.kordex.core.commands.application.slash.converters.impl.StringChoiceConverter",
 				""
 			).formatConverter()
 
 			converter3 = ConverterFormatter(
-				"com.kotlindiscord.kord.extensions.commands.converters.SingleToDefaultingConverter",
+				"dev.kordex.core.commands.converters.SingleToDefaultingConverter",
 				"channel"
 			).formatConverter()
 		}

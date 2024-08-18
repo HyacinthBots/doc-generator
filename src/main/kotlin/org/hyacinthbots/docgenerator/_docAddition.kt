@@ -9,7 +9,7 @@
 
 package org.hyacinthbots.docgenerator
 
-import com.kotlindiscord.kord.extensions.commands.application.ApplicationCommand
+import dev.kordex.core.commands.application.ApplicationCommand
 import org.hyacinthbots.docgenerator.annotations.DocAdditionBuilderDSL
 import org.hyacinthbots.docgenerator.builder.DocAdditionBuilder
 

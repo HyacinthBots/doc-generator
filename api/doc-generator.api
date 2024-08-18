@@ -1,10 +1,10 @@
 public final class org/hyacinthbots/docgenerator/_docAdditionKt {
-	public static final fun additionalDocumentation (Lcom/kotlindiscord/kord/extensions/commands/application/ApplicationCommand;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-	public static final fun subCommandAdditionalDocumentation (Lcom/kotlindiscord/kord/extensions/commands/application/ApplicationCommand;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static final fun additionalDocumentation (Ldev/kordex/core/commands/application/ApplicationCommand;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static final fun subCommandAdditionalDocumentation (Ldev/kordex/core/commands/application/ApplicationCommand;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 }
 
 public final class org/hyacinthbots/docgenerator/_docGeneratorKt {
-	public static final fun docsGenerator (Lcom/kotlindiscord/kord/extensions/builders/ExtensibleBotBuilder;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+	public static final fun docsGenerator (Ldev/kordex/core/builders/ExtensibleBotBuilder;Lkotlin/jvm/functions/Function2;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 }
 
 public abstract interface annotation class org/hyacinthbots/docgenerator/annotations/ConfigurationBuilderDSL : java/lang/annotation/Annotation {
@@ -96,7 +96,7 @@ public final class org/hyacinthbots/docgenerator/exceptions/InvalidEnvironmentVa
 	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
 }
 
-public final class org/hyacinthbots/docgenerator/extensions/CommandList : com/kotlindiscord/kord/extensions/extensions/Extension {
+public final class org/hyacinthbots/docgenerator/extensions/CommandList : dev/kordex/core/extensions/Extension {
 	public fun <init> (Ljava/lang/String;Ljava/util/List;)V
 	public fun getName ()Ljava/lang/String;
 	public fun setup (Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
