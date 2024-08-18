@@ -86,6 +86,10 @@ gitHooks {
 
 kotlin {
     explicitApi()
+
+	// Please consider whether this is actually something you need;
+	// newer compilers can produce better bytecode whilst still
+	// being compatible.
     jvmToolchain(javaVersion)
 }
 
