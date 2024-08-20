@@ -1,6 +1,6 @@
 [versions]
-kotlin = "2.0.20-Beta1"
-kordex = "2.0.0-20240818.103627-5"
+kotlin = "2.0.20-RC2"
+kordex = "2.1.0-20240820.102632-1"
 git-hooks = "0.0.2"
 licenser = "0.6.1"
 bin-compat = "0.15.0-Beta.3"
