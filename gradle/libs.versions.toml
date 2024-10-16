@@ -5,7 +5,7 @@ git-hooks = "0.0.2"
 licenser = "0.6.1"
 bin-compat = "0.16.3"
 
-detekt = "1.23.6"
+detekt = "1.23.7"
 logging = "7.0.0"
 
 junit5 = "5.11.0"
