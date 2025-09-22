@@ -202,4 +202,5 @@ mavenPublishing {
             developerConnection.set("scm:git:git://github.com/#${Meta.GITHUB_REPO}.git")
         }
     }
+
 }

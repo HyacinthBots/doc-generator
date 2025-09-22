@@ -32,8 +32,8 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      mavenCentralUsername: ${{ secrets.NEXUS_USER }}
-      mavenCentralPassword: ${{ secrets.NEXUS_PASSWORD }}
+      ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.NEXUS_USER }}
+      ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.NEXUS_PASSWORD }}
       GPG_SIGNING_KEY: ${{ secrets.GPG_SIGNING_KEY }}
       GPG_SIGNING_PASS: ${{ secrets.GPG_SIGNING_PASS }}
       GITHUB_BRANCH_NAME: ${{ github.ref }}
