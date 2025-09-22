@@ -6,9 +6,6 @@ object Meta {
     const val PROJECT_VERSION = "0.3.1"
     const val DESCRIPTION = "Generate documentation for KordEx bots!"
     const val GITHUB_REPO = "HyacinthBots/doc-generator"
-    const val RELEASE = "https://s01.oss.sonatype.org/content/repositories/releases/"
-    const val SNAPSHOT = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
-
     val version: String
         get() {
             val tag = System.getenv("GITHUB_TAG_NAME")
@@ -28,8 +25,6 @@ object Meta {
 }
 
 plugins {
-    `java-library`
-    `maven-publish`
     signing
 
     alias(libs.plugins.kotlin)
@@ -38,6 +33,7 @@ plugins {
     alias(libs.plugins.git.hooks)
     alias(libs.plugins.licenser)
     alias(libs.plugins.kordex.plugin)
+    alias(libs.plugins.maven.publish)
 }
 
 group = "org.hyacinthbots"
@@ -165,61 +161,45 @@ signing {
     }
 }
 
-publishing {
-    publications {
-        create<MavenPublication>("maven") {
-            groupId = project.group.toString()
-            artifactId = project.name
-            version = Meta.version
-            from(components["kotlin"])
-            artifact(tasks["sourcesJar"])
-            artifact(tasks["javadocJar"])
+mavenPublishing {
+    publishToMavenCentral()
 
-            pom {
-                name.set(project.name)
-                description.set(Meta.DESCRIPTION)
-                url.set("https://github.com/${Meta.GITHUB_REPO}")
+    signAllPublications()
 
-                organization {
-                    name.set("HyacinthBots")
-                    url.set("https://github.com/HyacinthBots")
-                }
+    coordinates(project.group.toString(), project.name, Meta.version)
 
-                developers {
-                    developer {
-                        name.set("The HyacinthBots team")
-                    }
-                }
+    pom {
+        name.set(project.name)
+        description.set(Meta.DESCRIPTION)
+        url.set("https://github.com/${Meta.GITHUB_REPO}")
 
-                issueManagement {
-                    system.set("GitHub")
-                    url.set("https://github.com/${Meta.GITHUB_REPO}/issues")
-                }
+        organization {
+            name.set("HyacinthBots")
+            url.set("https://github.com/HyacinthBots")
+        }
 
-                licenses {
-                    license {
-                        name.set("MIT")
-                        url.set("https://mit-license.org/")
-                    }
-                }
-
-                scm {
-                    url.set("https://github.com/${Meta.GITHUB_REPO}.git")
-                    connection.set("scm:git:git://github.com/${Meta.GITHUB_REPO}.git")
-                    developerConnection.set("scm:git:git://github.com/#${Meta.GITHUB_REPO}.git")
-                }
+        developers {
+            developer {
+                name.set("The HyacinthBots team")
             }
         }
-    }
 
-    repositories {
-        maven {
-            url = uri(if (Meta.isSnapshot) Meta.SNAPSHOT else Meta.RELEASE)
+        issueManagement {
+            system.set("GitHub")
+            url.set("https://github.com/${Meta.GITHUB_REPO}/issues")
+        }
 
-            credentials {
-                username = System.getenv("NEXUS_USER")
-                password = System.getenv("NEXUS_PASSWORD")
+        licenses {
+            license {
+                name.set("MIT")
+                url.set("https://mit-license.org/")
             }
+        }
+
+        scm {
+            url.set("https://github.com/${Meta.GITHUB_REPO}.git")
+            connection.set("scm:git:git://github.com/${Meta.GITHUB_REPO}.git")
+            developerConnection.set("scm:git:git://github.com/#${Meta.GITHUB_REPO}.git")
         }
     }
 }
