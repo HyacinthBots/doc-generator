@@ -46,7 +46,7 @@ internal suspend inline fun findOrCreateDocumentsFile(path: Path) {
 }
 
 /**
- * Extension function for formatting a [MutableSet] of [Permission]s into a string, possible localised if necessary.
+ * Extension function for formatting a [MutableSet] of [Permission]s into a string, possibly localised if necessary.
  *
  * @param language The [Locale] to translate into
  *

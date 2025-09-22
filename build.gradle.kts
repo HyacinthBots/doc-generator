@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 object Meta {
-    const val PROJECT_VERSION = "0.3.0-rc.2"
+    const val PROJECT_VERSION = "0.3.1"
     const val DESCRIPTION = "Generate documentation for KordEx bots!"
     const val GITHUB_REPO = "HyacinthBots/doc-generator"
     const val RELEASE = "https://s01.oss.sonatype.org/content/repositories/releases/"
@@ -37,7 +37,6 @@ plugins {
     alias(libs.plugins.detekt)
     alias(libs.plugins.git.hooks)
     alias(libs.plugins.licenser)
-    alias(libs.plugins.binary.compatibility.validator)
     alias(libs.plugins.kordex.plugin)
 }
 
@@ -50,8 +49,18 @@ repositories {
     mavenCentral()
 
     maven {
+        name = "Sonatype Snapshots (Legacy)"
+        url = uri("https://oss.sonatype.org/content/repositories/snapshots")
+    }
+
+    maven {
+        name = "Sonatype Snapshots"
+        url = uri("https://s01.oss.sonatype.org/content/repositories/snapshots")
+    }
+
+    maven {
         name = "Kord Snapshots"
-        url = uri("https://repo.kord.dev/snapshots")
+        url = uri("https://snapshots.kord.dev")
     }
 
     maven {
@@ -65,13 +74,8 @@ repositories {
     }
 
     maven {
-        name = "Sonatype Snapshots (Legacy)"
-        url = uri("https://oss.sonatype.org/content/repositories/snapshots")
-    }
-
-    maven {
-        name = "Sonatype Snapshots"
-        url = uri("https://s01.oss.sonatype.org/content/repositories/snapshots")
+        name = "Kord Extensions (Snapshots 2)"
+        url = uri("https://repo.kordex.dev/snapshots")
     }
 }
 
@@ -88,7 +92,7 @@ dependencies {
 }
 
 kordEx {
-    kordExVersion = "2.3.1-20241123.224536-17"
+    kordExVersion = "2.3.6-SNAPSHOT"
     ignoreIncompatibleKotlinVersion = true
 
     i18n {
@@ -100,7 +104,7 @@ kordEx {
 
 gitHooks {
     setHooks(
-        mapOf("pre-commit" to "clean apiCheck updateLicense detekt")
+        mapOf("pre-commit" to "clean checkLegacyAbi applyLicenses detekt")
     )
 }
 
@@ -130,10 +134,6 @@ tasks {
     withType<JavaCompile> {
         options.encoding = "UTF-8"
         options.isDeprecation = true
-        options.release.set(javaVersion)
-
-	    sourceCompatibility = javaVersion.toString()
-	    targetCompatibility = javaVersion.toString()
     }
 
     wrapper {
@@ -149,7 +149,7 @@ detekt {
 }
 
 license {
-    setHeader(rootProject.file("HEADER"))
+    rule(file(rootProject.file("HEADER")))
     include("**/*.kt", "**/*.java", "**/strings**.properties")
     exclude("**/Translations.kt")
 }
