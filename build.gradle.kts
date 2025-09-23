@@ -6,6 +6,9 @@ object Meta {
     const val PROJECT_VERSION = "0.3.1"
     const val DESCRIPTION = "Generate documentation for KordEx bots!"
     const val GITHUB_REPO = "HyacinthBots/doc-generator"
+    const val RELEASE = "https://repo.kordex.dev/external-releases"
+    const val SNAPSHOT = "https://repo.kordex.dev/external-snapshots"
+
     val version: String
         get() {
             val tag = System.getenv("GITHUB_TAG_NAME")
@@ -88,7 +91,7 @@ dependencies {
 }
 
 kordEx {
-    kordExVersion = "2.3.6-SNAPSHOT"
+    kordExVersion = "2.3.6-20250918.193222-2"
     ignoreIncompatibleKotlinVersion = true
 
     i18n {

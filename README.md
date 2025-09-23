@@ -26,10 +26,24 @@ Translations are hosted on [weblate](https://hosted.weblate.org)
 #### Maven:
 
 ```xml
+<!-- Adding the Releases repository -->
+<repository>
+    <id>releases-repo</id>
+    <url>https://releases-repo-external.kordex.dev</url>
+    <releases>
+        <enabled>true</enabled>
+    </releases>
+    <snapshots>
+        <enabled>false</enabled>
+    </snapshots>
+</repository>
+```
+
+```xml
 <!-- Adding the Snapshots repository (Optional) -->
 <repository>
     <id>snapshots-repo</id>
-    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    <url>https://snapshots-repo-external.kordex.dev</url>
     <releases>
         <enabled>false</enabled>
     </releases>
@@ -51,11 +65,14 @@ Translations are hosted on [weblate](https://hosted.weblate.org)
 
 ```groovy
 repositories {
-    mavenCentral()
+    maven {
+        name "KordEx External Releases"
+        url "https://releases-repo-external.kordex.dev"
+    }
     // Optionally add the snapshots repository
     maven {
-        name "Sonatype snapshots"
-        url "https://oss.sonatype.org/content/repositories/snapshots"
+        name "KordEx External Snapshots"
+        url "https://snapshots-repo-external.kordex.dev"
     }
 }
 
@@ -68,11 +85,14 @@ dependencies {
 #### Gradle (Kotlin)
 ```kotlin
 repositories {
-    mavenCentral()
+    maven {
+        name = "KordEx External Releases"
+        url = uri("https://releases-repo-external.kordex.dev")
+    }
     // Optionally add the snapshots repository
     maven {
-        name = "Sonatype Snapshots"
-        url = uri("https://oss.sonatype.org/content/repositories/snapshots")
+        name = "KordEx External Snapshots"
+        url = uri("https://snapshots-repo-external.kordex.dev")
     }
 }
 
