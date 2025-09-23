@@ -57,7 +57,7 @@ internal object DocsGenerator {
 	): String {
 		var totalOutput = ""
 		val translationLocale = language ?: SupportedLocales.ENGLISH
-		@Suppress("UNUSED_VALUE") // You do not understand
+		@Suppress("UNUSED_VALUE", "AssignedValueIsNeverRead") // You do not understand
 		commandTypes.forEach { type ->
 			when (type) {
 				CommandTypes.SLASH -> {

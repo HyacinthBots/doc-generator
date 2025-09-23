@@ -55,7 +55,7 @@ public class CommandList(private val botName: String?, private val enabledComman
 					} else {
 						var arguments: String?
 						arguments = addArguments(slashCommand)
-						if (arguments.isEmpty() == true) arguments = null
+						if (arguments.isEmpty()) arguments = null
 						var extraDocs = slashCommand.additionalDocumentation[slashCommand.name.translate()]
 						pagesObj.addPage(
 							Page {

@@ -28,7 +28,7 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
 
       - name: Build Project
-        run: ./gradlew clean apiCheck -x build
+        run: ./gradlew clean checkLegacyAbi -x build
 
   build:
     needs: check-api
@@ -81,8 +81,8 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      NEXUS_USER: ${{ secrets.NEXUS_USER }}
-      NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
+      KORDEX_USER: ${{ secrets.NEXUS_USER }}
+      KORDEX_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
       GPG_SIGNING_KEY: ${{ secrets.GPG_SIGNING_KEY }}
       GPG_SIGNING_PASS: ${{ secrets.GPG_SIGNING_PASS }}
       GITHUB_BRANCH_NAME: ${{ github.ref }}
