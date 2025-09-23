@@ -201,5 +201,5 @@ publicSlashCommand(::SlapArguments) {
 
 If you're facing any issues with doc-gen, navigate your way to the 
 [HyacinthBots Discord Server](https://discord.gg/hy2329fcTZ) where we'll be able to help you out. If you've got any 
-requests or issues, please open a ticket on [the issue tracker](https://github.com/HyacinthBots/doc-generator).
+requests or issues, please open a ticket on [the issue tracker](https://github.com/HyacinthBots/doc-generator/issues).
 
