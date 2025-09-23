@@ -108,10 +108,10 @@ kotlin {
     explicitApi()
 }
 
-java {
-    withJavadocJar()
-    withSourcesJar()
-}
+//java {
+//    withJavadocJar()
+//    withSourcesJar()
+//}
 
 tasks {
     test {
@@ -150,16 +150,16 @@ license {
     exclude("**/Translations.kt")
 }
 
-signing {
-    val signingKey = providers.environmentVariable("GPG_SIGNING_KEY")
-    val signingPass = providers.environmentVariable("GPG_SIGNING_PASS")
-
-    if (signingKey.isPresent && signingPass.isPresent) {
-        useInMemoryPgpKeys(signingKey.get(), signingPass.get())
-        val extension = extensions.getByName("publishing") as PublishingExtension
-        sign(extension.publications)
-    }
-}
+//signing {
+//    val signingKey = providers.environmentVariable("GPG_SIGNING_KEY")
+//    val signingPass = providers.environmentVariable("GPG_SIGNING_PASS")
+//
+//    if (signingKey.isPresent && signingPass.isPresent) {
+//        useInMemoryPgpKeys(signingKey.get(), signingPass.get())
+//        val extension = extensions.getByName("publishing") as PublishingExtension
+//        sign(extension.publications)
+//    }
+//}
 
 mavenPublishing {
     publishToMavenCentral()

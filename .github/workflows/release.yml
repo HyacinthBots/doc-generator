@@ -56,4 +56,4 @@ jobs:
         uses: gradle/actions/setup-gradle@v4
 
       - name: Publish Project
-        run: ./gradlew publish -x test
+        run: ./gradlew publishAndReleaseToMavenCentral -x test
