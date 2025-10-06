@@ -7,7 +7,7 @@ licenser = "2.1.+"
 detekt = "1.23.8"
 logging = "7.0.13"
 
-junit5 = "5.13.4"
+junit5 = "6.0.0"
 
 [libraries]
 kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib-jdk8" }
