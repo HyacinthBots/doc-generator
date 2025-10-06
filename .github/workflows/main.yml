@@ -25,7 +25,7 @@ jobs:
           java-version: 17
 
       - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v4
+        uses: gradle/actions/setup-gradle@v5
 
       - name: Build Project
         run: ./gradlew clean checkLegacyAbi -x build
@@ -48,7 +48,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v4
+        uses: gradle/actions/setup-gradle@v5
 
       - name: Build Project
         run: ./gradlew build --stacktrace -x test
@@ -68,7 +68,7 @@ jobs:
 #          java-version: 17
 #
 #      - name: Run tests
-#        uses: gradle/actions/setup-gradle@v4
+#        uses: gradle/actions/setup-gradle@v5
 #        env:
 #          TEST_TOKEN: ${{ secrets.TEST_TOKEN }}
 #        with:
@@ -103,7 +103,7 @@ jobs:
           java-version: 17
 
       - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v4
+        uses: gradle/actions/setup-gradle@v5
 
       - name: Publish Project
         run: ./gradlew publish -x test
