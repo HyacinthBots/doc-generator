@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022-2024 HyacinthBots <hyacinthbots@outlook.com>
+ * Copyright (c) 2022-2026 HyacinthBots <hyacinthbots@outlook.com>
  *
  * This file is part of doc-generator.
  *
@@ -10,8 +10,8 @@
 package org.hyacinthbots.docgenerator.generator
 
 import dev.kordex.core.i18n.SupportedLocales
-import dev.kordex.core.i18n.types.Key
 import dev.kordex.core.koin.KordExKoinComponent
+import dev.kordex.i18n.Key
 import docgenerator.i18n.Translations
 import org.hyacinthbots.docgenerator.exceptions.InvalidConverterException
 import java.util.Locale

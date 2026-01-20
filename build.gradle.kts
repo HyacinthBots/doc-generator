@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 object Meta {
-    const val PROJECT_VERSION = "0.3.1"
+    const val PROJECT_VERSION = "0.3.2"
     const val DESCRIPTION = "Generate documentation for KordEx bots!"
     const val GITHUB_REPO = "HyacinthBots/doc-generator"
     const val RELEASE = "https://repo.kordex.dev/external-releases"
@@ -38,6 +38,7 @@ plugins {
     alias(libs.plugins.git.hooks)
     alias(libs.plugins.licenser)
     alias(libs.plugins.kordex.plugin)
+    alias(libs.plugins.kordex.i18n)
 }
 
 group = "org.hyacinthbots"
@@ -92,12 +93,12 @@ dependencies {
 }
 
 kordEx {
-    kordExVersion = "2.3.6-20250918.193222-2"
+    kordExVersion = "2.4.1-20251224.130127-1"
     ignoreIncompatibleKotlinVersion = true
+}
 
-    i18n {
-        classPackage = "docgenerator.i18n"
-        translationBundle = "doc-generator.strings"
+i18n {
+    bundle("doc-generator.strings", "docgenerator.i18n") {
         publicVisibility = false
     }
 }

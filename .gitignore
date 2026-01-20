@@ -28,3 +28,7 @@ bin/
 # macos
 
 *.DS_Store
+
+.env
+commands.md
+data/
