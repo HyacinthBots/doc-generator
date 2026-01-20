@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022-2024 HyacinthBots <hyacinthbots@outlook.com>
+ * Copyright (c) 2022-2026 HyacinthBots <hyacinthbots@outlook.com>
  *
  * This file is part of doc-generator.
  *
@@ -10,8 +10,8 @@
 import dev.kord.common.entity.Permission
 import dev.kord.common.entity.Permissions
 import dev.kordex.core.i18n.SupportedLocales
-import dev.kordex.core.i18n.types.Bundle
-import dev.kordex.core.i18n.types.Key
+import dev.kordex.i18n.Bundle
+import dev.kordex.i18n.Key
 import kotlinx.coroutines.runBlocking
 import org.hyacinthbots.docgenerator.enums.CommandTypes
 import org.hyacinthbots.docgenerator.findOrCreateDocumentsFile

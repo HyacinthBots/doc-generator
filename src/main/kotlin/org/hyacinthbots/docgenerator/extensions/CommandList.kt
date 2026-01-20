@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022-2024 HyacinthBots <hyacinthbots@outlook.com>
+ * Copyright (c) 2022-2026 HyacinthBots <hyacinthbots@outlook.com>
  *
  * This file is part of doc-generator.
  *
@@ -9,6 +9,7 @@
 
 package org.hyacinthbots.docgenerator.extensions
 
+import dev.kord.common.entity.ApplicationCommandType
 import dev.kord.common.entity.Permission
 import dev.kord.rest.builder.message.EmbedBuilder
 import dev.kordex.core.commands.application.ApplicationCommand
@@ -45,9 +46,9 @@ public class CommandList(private val botName: String?, private val enabledComman
 							pagesObj.addPage(
 								Page {
 									title = "${subCommand.parentCommand?.name?.translate()}" +
-											" ${subCommand.name.translate()}"
+										" ${subCommand.name.translate()}"
 									description = subCommand.description.translate()
-									createEmbed(arguments, subCommand.requiredPerms, externalBundle, subExtraDocs)
+									createEmbed(arguments, subCommand.requiredPerms, externalBundle, subExtraDocs, slashCommand.type)
 								}
 							)
 							subExtraDocs = null
@@ -61,7 +62,7 @@ public class CommandList(private val botName: String?, private val enabledComman
 							Page {
 								title = slashCommand.name.translate()
 								description = slashCommand.description.translate()
-								createEmbed(arguments, slashCommand.requiredPerms, externalBundle, extraDocs)
+								createEmbed(arguments, slashCommand.requiredPerms, externalBundle, extraDocs, slashCommand.type)
 							}
 						)
 						extraDocs = null
@@ -84,7 +85,8 @@ public class CommandList(private val botName: String?, private val enabledComman
 
 		publicSlashCommand {
 			name = Translations.Commandlist.name
-			description = Translations.Commandlist.description.withOrdinalPlaceholders(botName ?: kord.getSelf().username)
+			description =
+				Translations.Commandlist.description.withOrdinalPlaceholders(botName ?: kord.getSelf().username)
 
 			action {
 				val paginator = PublicResponsePaginator(
@@ -113,7 +115,8 @@ public class CommandList(private val botName: String?, private val enabledComman
 		args: String?,
 		requiredPerms: MutableSet<Permission>,
 		bundle: String?,
-		extraDocs: DocAdditionBuilder?
+		extraDocs: DocAdditionBuilder?,
+		commandType: ApplicationCommandType
 	) {
 		field {
 			name = "Arguments"
@@ -137,17 +140,27 @@ public class CommandList(private val botName: String?, private val enabledComman
 					"* **${Translations.Header.result}**:${resultAsKey.translate()}\n"
 			}
 		}
+		footer {
+			text = "Command type: ${convertType(commandType)}"
+		}
 	}
 
 	private fun <T : ApplicationCommand<*>> createMessageUserCommandDocs(command: T, pagesObj: Pages) {
-		val provider = command.translationsProvider
 		var extraDocs = command.additionalDocumentation[command.name.translate()]
 		pagesObj.addPage(
 			Page {
-				title = command.name.translate(provider, null, externalBundle)
-				createEmbed(null, command.requiredPerms, externalBundle, extraDocs)
+				title = command.name.translate()
+				createEmbed(null, command.requiredPerms, externalBundle, extraDocs, command.type)
 			}
 		)
 		extraDocs = null
 	}
+
+	private fun convertType(type: ApplicationCommandType): String =
+		when (type.value) {
+			1 -> "Slash"
+			2 -> "User"
+			3 -> "Message"
+			else -> "Unknown"
+		}
 }

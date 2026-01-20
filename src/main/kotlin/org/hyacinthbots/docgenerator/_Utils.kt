@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022-2024 HyacinthBots <hyacinthbots@outlook.com>
+ * Copyright (c) 2022-2026 HyacinthBots <hyacinthbots@outlook.com>
  *
  * This file is part of doc-generator.
  *

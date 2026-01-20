@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022-2024 HyacinthBots <hyacinthbots@outlook.com>
+ * Copyright (c) 2022-2026 HyacinthBots <hyacinthbots@outlook.com>
  *
  * This file is part of doc-generator.
  *
@@ -309,7 +309,7 @@ internal object DocsGenerator {
 								// Add the name and info, user commands have no description :(
 								"### ${Translations.Header.Usercommand.name.translateLocale(translationLocale)}: `${
 									userCommand.name.translate(translationLocale)
-								}\n${
+								}`\n${
 									// Add the command result if there is any
 									if (additionalDocs?.commandResult != null) {
 										"\n**${Translations.Header.result.translateLocale(translationLocale)}**: ${
