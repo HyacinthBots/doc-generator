@@ -3,7 +3,7 @@ kotlin = "2.3.0"
 kordex-plugin = "1.9.0"
 kordex-i18n = "1.1.1"
 git-hooks = "0.0.2"
-licenser = "2.2.1"
+licenser = "2.2.2"
 
 detekt = "1.23.8"
 logging = "7.0.14"
